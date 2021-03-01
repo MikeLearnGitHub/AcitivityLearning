@@ -46,8 +46,19 @@ class MainActivity : AppCompatActivity() {
 //            intent.setData(Uri.parse("tel:17804297287"))
 //            intent.setAction("android.settings.SETTINGS")
             // pass data between activity
-            intent.putExtra("message_key", "Hello from MainActivity")
-            startActivity(intent)
+//            intent.putExtra("message_key", "Hello from MainActivity")
+//            startActivity(intent)
+            // get result back from activity
+            startActivityForResult(intent,1)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode.equals(1)) {
+            when (resultCode) {
+                RESULT_OK -> Toast.makeText(this, data?.getStringExtra("back_message"), Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

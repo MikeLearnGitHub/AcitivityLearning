@@ -1,6 +1,7 @@
 package com.example.acitivitylearning
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -36,7 +37,14 @@ class MainActivity : AppCompatActivity() {
 //            val intent = Intent(this,SecondActivity::class.java)
 //            startActivity(intent)
             // Implicit Intent
-            val intent = Intent("com.example.activityLearning.START_ACTION")
+//            val intent = Intent("com.example.activityLearning.START_ACTION")
+//            startActivity(intent)
+            // use implicit intent invoke system app
+            val intent = Intent()
+//            intent.setAction(Intent.ACTION_CALL)
+//            intent.setAction(Intent.ACTION_DIAL)
+//            intent.setData(Uri.parse("tel:17804297287"))
+            intent.setAction("android.settings.SETTINGS")
             startActivity(intent)
         }
     }

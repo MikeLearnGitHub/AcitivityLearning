@@ -33,7 +33,10 @@ class MainActivity : AppCompatActivity() {
         nextButton.setOnClickListener {
 //            Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show()
             // Explicit Intent
-            val intent = Intent(this,SecondActivity::class.java)
+//            val intent = Intent(this,SecondActivity::class.java)
+//            startActivity(intent)
+            // Implicit Intent
+            val intent = Intent("com.example.activityLearning.START_ACTION")
             startActivity(intent)
         }
     }

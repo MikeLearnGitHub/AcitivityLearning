@@ -34,17 +34,19 @@ class MainActivity : AppCompatActivity() {
         nextButton.setOnClickListener {
 //            Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show()
             // Explicit Intent
-//            val intent = Intent(this,SecondActivity::class.java)
+            val intent = Intent(this,SecondActivity::class.java)
 //            startActivity(intent)
             // Implicit Intent
 //            val intent = Intent("com.example.activityLearning.START_ACTION")
 //            startActivity(intent)
             // use implicit intent invoke system app
-            val intent = Intent()
+//            val intent = Intent()
 //            intent.setAction(Intent.ACTION_CALL)
 //            intent.setAction(Intent.ACTION_DIAL)
 //            intent.setData(Uri.parse("tel:17804297287"))
-            intent.setAction("android.settings.SETTINGS")
+//            intent.setAction("android.settings.SETTINGS")
+            // pass data between activity
+            intent.putExtra("message_key", "Hello from MainActivity")
             startActivity(intent)
         }
     }

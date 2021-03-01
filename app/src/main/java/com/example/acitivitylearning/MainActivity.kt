@@ -1,5 +1,6 @@
 package com.example.acitivitylearning
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -11,10 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val nextButton: Button = findViewById(R.id.btnNext)
-        nextButton.setOnClickListener {
-            Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show()
-        }
+        initView()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -28,5 +26,15 @@ class MainActivity : AppCompatActivity() {
             R.id.remove_item -> Toast.makeText(this, "Remove", Toast.LENGTH_LONG).show()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun initView() {
+        val nextButton: Button = findViewById(R.id.btnNext)
+        nextButton.setOnClickListener {
+//            Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show()
+            // Explicit Intent
+            val intent = Intent(this,SecondActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

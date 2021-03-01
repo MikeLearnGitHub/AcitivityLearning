@@ -4,16 +4,20 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
+    val TAG: String = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
+        Log.d(TAG, "onCreate()")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -21,6 +25,35 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart()")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume()")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop()")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy()")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart()")
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.add_item -> Toast.makeText(this, "Add", Toast.LENGTH_LONG).show()
@@ -51,6 +84,21 @@ class MainActivity : AppCompatActivity() {
             // get result back from activity
             startActivityForResult(intent,1)
         }
+        val startNormalActivity: Button = findViewById(R.id.btnStartNormalActivity)
+        val startDialogActivity: Button = findViewById(R.id.btnStartDialogActivity)
+        startNormalActivity.setOnClickListener {
+            val intent = Intent(this, NormalActivity::class.java)
+            startActivity(intent)
+        }
+        startDialogActivity.setOnClickListener {
+            val intent = Intent(this, DialogActivity::class.java)
+            startActivity(intent)
+//            val alert = MaterialAlertDialogBuilder(this)
+//                .setTitle("Alert")
+//                .setMessage("Alert message")
+//                .show()
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

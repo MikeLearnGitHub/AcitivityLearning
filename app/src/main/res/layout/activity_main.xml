@@ -14,4 +14,16 @@
         android:layout_height="wrap_content"
         android:text="Next"/>
 
+    <Button
+        android:id="@+id/btnStartNormalActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="StartNormalActivity"/>
+
+    <Button
+        android:id="@+id/btnStartDialogActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="StartDialogActivity"/>
+
 </LinearLayout>

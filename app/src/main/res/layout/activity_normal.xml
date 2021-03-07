@@ -4,10 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".NormalActivity">
     <TextView
         android:id="@+id/tvNormal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="This normal activity" />
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exit"/>
 </LinearLayout>

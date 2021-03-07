@@ -11,9 +11,9 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-        val intent = getIntent()
-        val data = intent.getStringExtra("message_key")
-        Toast.makeText(this, data, Toast.LENGTH_LONG).show()
+//        val intent = getIntent()
+//        val data = intent.getStringExtra("message_key")
+//        Toast.makeText(this, data, Toast.LENGTH_LONG).show()
         initView()
     }
 
